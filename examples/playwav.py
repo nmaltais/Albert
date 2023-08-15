@@ -1,6 +1,5 @@
 import os
 import sys
-import time
 import wave
 import pyaudio
 
@@ -34,7 +33,7 @@ def play_audio(audio_file):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("Usage: python main.py <audio_file>")
+        print("Usage: python playwav.py <audio_file>")
         sys.exit(1)
 
     audio_file = sys.argv[1]

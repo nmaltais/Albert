@@ -7,3 +7,4 @@ PyAudio==0.2.13
 pydub==0.25.1
 requests==2.31.0
 urllib3==2.0.4
+# urllib3==1.26.6 # This would deal with warning: urllib3 v2.0 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'
