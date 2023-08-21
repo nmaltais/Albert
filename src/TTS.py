@@ -1,7 +1,8 @@
-from gtts import gTTS
+import os
+import platform
 
-def textToMp3(text):
-    tts = gTTS(text, lang='en', tld='com.au')
-    path = "audio/readtext.mp3"
-    tts.save(path)
-    return path
+def playText(text):
+    if platform.system() == 'Darwin': # MacOs
+        os.system("say -v Grandpa '" + text + "'")
+    elif platform.system() == 'Linux': # RaspberryPi
+        os.system("echo " + text + " | festival --tts")

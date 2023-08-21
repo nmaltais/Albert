@@ -14,12 +14,22 @@ Installation
     Mac
         brew install portaudio
         brew install ffmpeg
+        <!-- brew install espeak -->
         python3 -m pip install --user virtualenv
         pip3 install python3-pyaudio
 
     Linux / RaspberryPi OS
+        sudo apt-get install libttspico-utils
         sudo apt-get install python-pyaudio
         sudo apt-get install python3-venv -y
+<!-- wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico0_1.0+git20130326-9_armhf.deb
+        wget http://ftp.us.debian.org/debian/pool/non-free/s/svox/libttspico-utils_1.0+git20130326-9_armhf.deb
+        sudo apt-get install -f ./libttspico0_1.0+git20130326-9_armhf.deb ./libttspico-utils_1.0+git20130326-9_armhf.deb
+        pico2wave -l en-US -w lookdave.wav "Hi, Welcome to Circuit Digest Tutorial" && aplay lookdave.wav -->
+        sudo apt-get install festival
+        sudo apt-get install festvox-us-slt-hts
+        add this line to /etc/festival.scm: (set! voice_default 'voice_cmu_us_slt_arctic_hts) 
+
 
 
 5- create venv and install reqs
