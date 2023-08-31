@@ -1,10 +1,18 @@
+from time import sleep
 import TTS
 import GPT
+import STT
 
-convertation = None
+conversation = None
 while True:
-    user_input = input("Waiting for input... ") # TODO: Make this audio input, and wait for a keyword before recording until a end of prompt
-    print(user_input)
-    response, convertation = GPT.makeConversation(convertation, user_input)
-    TTS.playText(response)
-    # TODO: delete conversation if the conversation is over to save on tokens
+    # if STT.listen_for_keyword("albert"):
+        user_input = input("Waiting for input... ") # Text input
+        print("Listening...")
+        # user_input = STT.get_voice_input(tool="whisper")
+        if user_input == None or user_input == '':
+            continue
+        print(user_input)
+        response, conversation = GPT.make_conversation(conversation, user_input)
+        TTS.play_text(response)
+        # TODO: delete conversation, if the conversation is over, to save on tokens
+    # sleep(2)

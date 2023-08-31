@@ -28,7 +28,8 @@ Installation
         pico2wave -l en-US -w lookdave.wav "Hi, Welcome to Circuit Digest Tutorial" && aplay lookdave.wav -->
         sudo apt-get install festival
         sudo apt-get install festvox-us-slt-hts
-        add this line to /etc/festival.scm: (set! voice_default 'voice_cmu_us_slt_arctic_hts) 
+        add this line to /etc/festival.scm: (set! voice_default 'voice_cmu_us_slt_arctic_hts)
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh <!-- Needed for pip install tiktoken to work -->
 
 
 

@@ -31,7 +31,7 @@ def num_tokens_from_messages(messages):
     return num_tokens
 
 # Function to generate prompts using ChatGPT API
-def getAnswer(setup, verbose = False):
+def get_answer(setup, verbose = False):
     data = {
         "model": CHATGPT_MODEL_NAME,
         "temperature": 0.7,
@@ -61,7 +61,7 @@ def getAnswer(setup, verbose = False):
         return None
 
 
-def makeConversation(conversation, user_input, verbose = False):
+def make_conversation(conversation, user_input, verbose = False):
     
     if conversation is None:
         # Initial conversation setup if needed
@@ -81,7 +81,7 @@ def makeConversation(conversation, user_input, verbose = False):
             conv_history_tokens = num_tokens_from_messages(conversation)
 
         # Query ChatGPT
-        response_string = getAnswer(conversation, True)
+        response_string = get_answer(conversation, True)
 
         conversation.append({"role": "assistant", "content": response_string})
         if (verbose):
